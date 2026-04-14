@@ -1,0 +1,6 @@
+{
+  "name": "MTG Rules Oracle",
+  "description": "An AI-powered Magic: The Gathering rules assistant that uses the comprehensive rules and a card database to answer your questions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
