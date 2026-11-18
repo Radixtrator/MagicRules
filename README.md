@@ -33,6 +33,16 @@ On **Google Cloud Run**: Create service → *Continuously deploy from a reposito
 
 Every push to `main` then redeploys.
 
+### Unraid (or any Docker host)
+
+Every push to `main` publishes `ghcr.io/radixtrator/magicrules:latest` (see `.github/workflows/docker-publish.yml`). In Unraid, go to Docker → Add Container:
+
+- **Repository:** `ghcr.io/radixtrator/magicrules:latest`
+- **Port:** container `8080` → host `3000`
+- **Variable:** `GEMINI_API_KEY`
+
+To update, use Docker → Check for Updates.
+
 ## How it works
 
 1. **Index (at startup, ~70 ms).** `rules.txt` is split into individual rules and glossary entries and loaded into an in-memory SQLite full-text index (`node:sqlite`, so there is no native dependency). See `server/rules.ts`.
